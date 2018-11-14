@@ -17,8 +17,7 @@
         app:itemIconTint="@color/darkgrey"
         android:fitsSystemWindows="true"
         app:menu="@menu/drawermenu"
-        android:layout_gravity="start"
-        >
+        android:layout_gravity="start">
 
     </android.support.design.widget.NavigationView>
 

@@ -9,17 +9,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
-    private DrawerLayout dl;
+        private DrawerLayout dl;
      private ActionBarDrawerToggle toggle;
      private NavigationView navView;
      private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
 
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         dl = (DrawerLayout)findViewById(R.id.drlayout);
         toggle = new ActionBarDrawerToggle(this,dl,R.string.open,R.string.close);
         dl.addDrawerListener(toggle);
@@ -96,5 +103,15 @@ public class MainActivity extends AppCompatActivity{
             faqmp.release();
         }
         super.onDestroy();
+
+
+        textView = (TextView) findViewById(R.id.textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TTS.class);
+                startActivity(intent);
+            }
+        });
     }
 }
