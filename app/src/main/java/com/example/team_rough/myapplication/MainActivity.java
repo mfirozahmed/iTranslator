@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
-        private DrawerLayout dl;
+     private DrawerLayout dl;
      private ActionBarDrawerToggle toggle;
      private NavigationView navView;
      private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
