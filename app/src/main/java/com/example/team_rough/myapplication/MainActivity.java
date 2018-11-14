@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity{
     private DrawerLayout dl;
      private ActionBarDrawerToggle toggle;
      private NavigationView navView;
-     MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
+     private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity{
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-         tutorialmp = MediaPlayer.create(this,R.raw.tts_tutorial);
+        tutorialmp = MediaPlayer.create(this,R.raw.tts_tutorial);
         profilemp = MediaPlayer.create(this,R.raw.tts_profile);
         faqmp = MediaPlayer.create(this,R.raw.tts_faqs);
         contactmp = MediaPlayer.create(this,R.raw.tts_contact_us);
@@ -62,23 +62,39 @@ public class MainActivity extends AppCompatActivity{
         switch (item.getItemId()) {
             case R.id.tutorial:
                 tutorialmp.start();
-                Toast.makeText(MainActivity.this, "Tutorial Selected", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.profile:
                 profilemp.start();
-                Toast.makeText(MainActivity.this, "Profile Selected", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.faq:
                 faqmp.start();
-                Toast.makeText(MainActivity.this, "Faq's Selected", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.contact:
                 contactmp.start();
-                Toast.makeText(MainActivity.this, "Contact us Selected", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        if(tutorialmp.isPlaying()) {
+            tutorialmp.stop();
+            tutorialmp.release();
 
+        }
+        if(profilemp.isPlaying()) {
+            profilemp.stop();
+            profilemp.release();
+        }
+        if(contactmp.isPlaying()) {
+            contactmp.stop();
+            contactmp.release();
+        }
+        if(faqmp.isPlaying()) {
+            faqmp.stop();
+            faqmp.release();
+        }
+        super.onDestroy();
+    }
 }
