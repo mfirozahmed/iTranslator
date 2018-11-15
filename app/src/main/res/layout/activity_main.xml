@@ -8,6 +8,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="183dp"
+            android:layout_marginLeft="135dp"
+            android:text="Click"
+            android:textColor="#000000"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/navid"
         app:headerLayout="@layout/header"
@@ -21,27 +41,5 @@
         android:layout_gravity="start">
 
     </android.support.design.widget.NavigationView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="183dp"
-            android:text="Click"
-            android:textStyle="bold"
-            android:textSize="40dp"
-            android:textColor="#000000"
-            android:id="@+id/textView"/>
-
-
-    </RelativeLayout>
-
-
-
 
 </android.support.v4.widget.DrawerLayout>
