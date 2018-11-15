@@ -13,12 +13,13 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
-     private DrawerLayout dl;
-     private ActionBarDrawerToggle toggle;
-     private NavigationView navView;
-     private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
+    private DrawerLayout dl;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navView;
+    private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
 
     private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,15 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        textView = (TextView) findViewById(R.id.textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TTS.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -67,7 +77,6 @@ public class MainActivity extends AppCompatActivity{
             case R.id.tutorial:
                 tutorialmp.start();
                 break;
-
             case R.id.profile:
                 profilemp.start();
                 break;
@@ -82,33 +91,24 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onDestroy() {
-        if(tutorialmp.isPlaying()) {
+        if (tutorialmp.isPlaying()) {
             tutorialmp.stop();
             tutorialmp.release();
-
         }
-        if(profilemp.isPlaying()) {
+        if (profilemp.isPlaying()) {
             profilemp.stop();
             profilemp.release();
         }
-        if(contactmp.isPlaying()) {
+        if (contactmp.isPlaying()) {
             contactmp.stop();
             contactmp.release();
         }
-        if(faqmp.isPlaying()) {
+        if (faqmp.isPlaying()) {
             faqmp.stop();
             faqmp.release();
         }
         super.onDestroy();
 
-
-        textView = (TextView) findViewById(R.id.textView);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TTS.class);
-                startActivity(intent);
-            }
-        });
     }
+
 }
