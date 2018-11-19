@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity{
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
     private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
-
     private TextView textView;
 
     @Override
@@ -36,11 +35,7 @@ public class MainActivity extends AppCompatActivity{
         faqmp = MediaPlayer.create(this,R.raw.tts_faqs);
         contactmp = MediaPlayer.create(this,R.raw.tts_contact_us);
 
-
-
         navView = findViewById(R.id.navid);
-
-
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -60,7 +55,6 @@ public class MainActivity extends AppCompatActivity{
         });
 
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -108,7 +102,5 @@ public class MainActivity extends AppCompatActivity{
             faqmp.release();
         }
         super.onDestroy();
-
     }
-
 }
