@@ -33,6 +33,7 @@ public class Splash2 extends AppCompatActivity {
                    e.printStackTrace();
                }
                finally {
+                   Splash2.this.finish();
                    startActivity(i);
                }
             }

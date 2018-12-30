@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity{
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
     private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
-    private TextView textView;
+    private ImageView iv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        textView = (TextView) findViewById(R.id.textView);
-        textView.setOnClickListener(new View.OnClickListener() {
+        iv1 = (ImageView) findViewById(R.id.iv1);
+        iv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TTS.class);
