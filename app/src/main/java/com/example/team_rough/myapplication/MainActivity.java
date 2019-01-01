@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity{
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
     private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
-    private ImageView iv1;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        iv1 = (ImageView) findViewById(R.id.iv1);
-        iv1.setOnClickListener(new View.OnClickListener() {
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TTS.class);
