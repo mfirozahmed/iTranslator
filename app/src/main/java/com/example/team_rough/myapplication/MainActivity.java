@@ -13,11 +13,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
-    private MediaPlayer tutorialmp,profilemp,faqmp,contactmp;
+    private MediaPlayer tutorialmp, profilemp, faqmp, contactmp;
     private ImageView imageView;
 
     @Override
@@ -25,16 +25,16 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dl = (DrawerLayout)findViewById(R.id.drlayout);
-        toggle = new ActionBarDrawerToggle(this,dl,R.string.open,R.string.close);
+        dl = (DrawerLayout) findViewById(R.id.drlayout);
+        toggle = new ActionBarDrawerToggle(this, dl, R.string.open, R.string.close);
         dl.addDrawerListener(toggle);
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tutorialmp = MediaPlayer.create(this,R.raw.tts_tutorial);
-        profilemp = MediaPlayer.create(this,R.raw.tts_profile);
-        faqmp = MediaPlayer.create(this,R.raw.tts_faqs);
-        contactmp = MediaPlayer.create(this,R.raw.tts_contact_us);
+        tutorialmp = MediaPlayer.create(this, R.raw.tts_tutorial);
+        profilemp = MediaPlayer.create(this, R.raw.tts_profile);
+        faqmp = MediaPlayer.create(this, R.raw.tts_faqs);
+        contactmp = MediaPlayer.create(this, R.raw.tts_contact_us);
 
         navView = findViewById(R.id.navid);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -59,8 +59,7 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(toggle.onOptionsItemSelected(item))
-        {
+        if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
