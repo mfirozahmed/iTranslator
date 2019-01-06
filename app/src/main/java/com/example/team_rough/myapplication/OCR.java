@@ -34,7 +34,7 @@ public class OCR extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
-                    Bitmap bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ocrtest);
+                    Bitmap bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.ocrtesttt);
 
                     TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
 
