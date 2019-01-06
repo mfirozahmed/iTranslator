@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dl = (DrawerLayout) findViewById(R.id.drlayout);
+        dl = findViewById(R.id.drlayout);
         toggle = new ActionBarDrawerToggle(this, dl, R.string.open, R.string.close);
         dl.addDrawerListener(toggle);
         toggle.syncState();
@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TTS.class);
+                Intent intent = new Intent(MainActivity.this, OCR.class);
                 startActivity(intent);
             }
         });

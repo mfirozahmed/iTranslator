@@ -11,20 +11,23 @@ import android.widget.TextView;
 
 public class Splash2 extends AppCompatActivity {
 
-    private TextView tv;
-    private ImageView iv;
+    private TextView textView;
+    private ImageView imageView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash2);
-        tv = (TextView) findViewById(R.id.tv);
-        iv = (ImageView) findViewById(R.id.iv);
-        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
-        tv.startAnimation(myanim);
-        iv.startAnimation(myanim);
-        final Intent i = new Intent(this,MainActivity.class);
+
+        textView = findViewById(R.id.tv);
+        imageView = findViewById(R.id.iv);
+
+        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.alpha);
+        textView.startAnimation(myanim);
+        imageView.startAnimation(myanim);
+
+        final Intent intent = new Intent(this,MainActivity.class);
         Thread timer = new Thread(){
             public void run(){
                try{
@@ -34,10 +37,11 @@ public class Splash2 extends AppCompatActivity {
                }
                finally {
                    Splash2.this.finish();
-                   startActivity(i);
+                   startActivity(intent);
                }
             }
         };
+
         timer.start();
     }
 }

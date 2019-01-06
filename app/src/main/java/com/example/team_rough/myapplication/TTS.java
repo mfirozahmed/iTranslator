@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -14,19 +14,22 @@ import java.util.Locale;
 public class TTS extends AppCompatActivity {
 
     private TextToSpeech textToSpeech;
-    private EditText editText;
     private Button play;
     private Button stop;
+    private TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tts);
 
-        editText = (EditText) findViewById(R.id.editText);
-        play = (Button) findViewById(R.id.play);
-        stop = (Button) findViewById(R.id.stop);
+        textView = findViewById(R.id.textView);
+        play = findViewById(R.id.play);
+        stop = findViewById(R.id.stop);
 
+        String text = getIntent().getExtras().getString("Text");
+        textView.setText(text);
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -49,6 +52,7 @@ public class TTS extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 speak();
             }
         });
@@ -56,17 +60,20 @@ public class TTS extends AppCompatActivity {
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 stop();
             }
         });
     }
 
     private void stop() {
+
         textToSpeech.stop();
     }
 
     private void speak() {
-        String text = editText.getText().toString();
+
+        String text = getIntent().getExtras().getString("Text");
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
@@ -74,6 +81,7 @@ public class TTS extends AppCompatActivity {
     protected void onDestroy() {
 
         if(textToSpeech == null){
+            Log.d("TTS", "NULL");
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
