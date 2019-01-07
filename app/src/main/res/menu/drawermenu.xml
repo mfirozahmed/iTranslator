@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingDefaultResource">
+
     <item
         android:id="@+id/profile"
-        android:title="Profile"
         android:icon="@drawable/profile"
-        />
+        android:title="Profile" />
+
     <item
         android:id="@+id/tutorial"
+        android:icon="@drawable/tutorial"
         android:title="Tutorial"
-        android:icon="@drawable/trlimg"
-
-
-
         />
+
     <item
         android:id="@+id/contact"
-        android:title="Contact us"
         android:icon="@drawable/contact"
-
+        android:title="Contact us"
         />
+
     <item
         android:id="@+id/faq"
-        android:title="FAQ's"
         android:icon="@drawable/faq"
-
-
+        android:title="FAQ's"
         />
 
 

@@ -8,14 +8,15 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="498dp"
+        android:layout_height="500dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="top"
-        android:hint="Enter your text"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
         android:textColor="#000000"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
 
     <Button
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="55dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginBottom="0dp"
         android:enabled="false"
         android:text="Play"
@@ -37,11 +38,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="249dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginBottom="0dp"
         android:enabled="false"
         android:text="Stop"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

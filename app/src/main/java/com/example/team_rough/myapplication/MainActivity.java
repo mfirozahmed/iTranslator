@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private DrawerLayout dl;
+    private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
     private MediaPlayer tutorialmp, profilemp, faqmp, contactmp;
@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dl = findViewById(R.id.drlayout);
-        toggle = new ActionBarDrawerToggle(this, dl, R.string.open, R.string.close);
-        dl.addDrawerListener(toggle);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

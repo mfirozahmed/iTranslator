@@ -3,6 +3,7 @@ package com.example.team_rough.myapplication;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,7 @@ public class TTS extends AppCompatActivity {
 
         String text = getIntent().getExtras().getString("Text");
         textView.setText(text);
+        textView.setMovementMethod(new ScrollingMovementMethod());
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
