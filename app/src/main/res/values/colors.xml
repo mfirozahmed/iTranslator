@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#153771</color>
-    <color name="colorPrimaryDark">#003457</color>
+    <color name="colorPrimary">#2e1cba</color>
+    <color name="colorPrimaryDark">#513cf9</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
@@ -10,5 +10,6 @@
     <color name="gradStart">#3944BC</color>
     <color name="gradStop">#0A1172</color>
     <color name="Denim">#1F456E</color>
+    <color name="transparent">#00000000</color>
 
 </resources>
