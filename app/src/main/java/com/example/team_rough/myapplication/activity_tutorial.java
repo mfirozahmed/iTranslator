@@ -27,7 +27,7 @@ public class activity_tutorial extends Activity {
         pausebutton = (Button) findViewById(R.id.pausebutton);
 
         final VideoView videoview = (VideoView) findViewById(R.id.videoview);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test2);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.tutorial);
         videoview.setVideoURI(uri);
         playbutton.setOnClickListener(new View.OnClickListener() {
             @Override

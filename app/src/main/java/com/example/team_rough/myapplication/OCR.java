@@ -69,6 +69,7 @@ public class OCR extends AppCompatActivity {
                 String text = stringBuilder.toString();
                 intent.putExtra("Text", text);
                 startActivity(intent);
+                OCR.this.finish();
             }
         });
     }
