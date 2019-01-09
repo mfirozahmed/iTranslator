@@ -3,6 +3,7 @@ package com.example.team_rough.myapplication;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,8 @@ import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
+import java.io.File;
+
 public class OCR extends AppCompatActivity {
 
     private ImageView imageView;
@@ -30,11 +33,14 @@ public class OCR extends AppCompatActivity {
 
         imageView = findViewById(R.id.img1);
         button = findViewById(R.id.ocr);
-        byte[] byteArray = getIntent().getByteArrayExtra("Image");
+//        byte[] byteArray = getIntent().getByteArrayExtra("Image");
+
 
         try {
-
-            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+//            Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("image2");
+//            Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/chobi.jpeg";
+            Bitmap bitmap = BitmapFactory.decodeFile(fileName);
             imageView.setImageBitmap(bitmap);
             TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
 
