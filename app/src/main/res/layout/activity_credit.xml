@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#708090"
+    android:scrollbars="vertical"
+    tools:context=".activity_faq">
+
+    <TextView
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="M Firoz Ahmed\nDepartment Of Computer Science And Engineering\nShahjalal Univarsity Of Science And Technology\nmfa@gmail.com"
+
+/>
+    <TextView
+    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="130dp"
+    android:text="Sneha Devi\nDepartment Of Computer Science And Engineering\nShahjalal Univarsity Of Science And Technology\nsnehadevi2016105@gmail.com"
+
+    />
+    <TextView
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="250dp"
+        android:text="Tajkia Nuri Ananna\nDepartment Of Computer Science And Engineering\nShahjalal Univarsity Of Science And Technology\ntazkiaaltaaf@gmail.com"
+
+        />
+
+</RelativeLayout>

@@ -128,5 +128,4 @@
         android:textColor="@color/white"
         app:fontFamily="@font/berkshire_swash"/>
 
-
 </RelativeLayout>

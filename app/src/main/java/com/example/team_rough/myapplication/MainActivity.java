@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
-    private MediaPlayer tutorialmp, profilemp, faqmp, contactmp;
+    private MediaPlayer tutorialmp, profilemp, faqmp, contactmp,creditmp;
     private ImageView imageView;
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         profilemp = MediaPlayer.create(this, R.raw.tts_profile);
         faqmp = MediaPlayer.create(this, R.raw.tts_faqs);
         contactmp = MediaPlayer.create(this, R.raw.tts_contact_us);
+        creditmp = MediaPlayer.create(this, R.raw.tts_credits);
 
         navView = findViewById(R.id.navid);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -147,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
                Intent intent1 = new Intent(MainActivity.this,activity_contact.class);
                startActivity(intent1);
                break;
+            case R.id.credit:
+                creditmp.start();
+                Intent intentc = new Intent(MainActivity.this,activity_credit.class);
+                startActivity(intentc);
+                break;
         }
     }
 
@@ -167,6 +173,10 @@ public class MainActivity extends AppCompatActivity {
         if (faqmp.isPlaying()) {
             faqmp.stop();
             faqmp.release();
+        }
+        if (creditmp.isPlaying()) {
+            creditmp.stop();
+            creditmp.release();
         }
         super.onDestroy();
     }
