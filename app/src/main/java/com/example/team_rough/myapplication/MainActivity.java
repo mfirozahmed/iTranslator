@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -13,10 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import static android.provider.Telephony.Mms.Part.FILENAME;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -55,11 +60,14 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,0);
+                boolean storageResult = StoragePermission.checkPermission(MainActivity.this);
+                boolean cameraResult = CameraPermission.checkPermission(MainActivity.this);
+                if(storageResult && cameraResult){
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent,0);
+                }
             }
         });
-
     }
 
     @Override
@@ -67,12 +75,36 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         Bitmap bitmap = (Bitmap)data.getExtras().get("data");
 
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
-        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/chobi.jpeg";
+        File file = new File(fileName);
+        Boolean created = false;
+        if(!file.exists()) {
+            try {
+                created = file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            created = true;
+        }
+        if(created) {
+            try {
+                FileOutputStream out = new FileOutputStream(file);
+                assert bitmap != null;
+                bitmap.compress(Bitmap.CompressFormat.JPEG,100,out);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+//        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
+//        byte[] byteArray = byteArrayOutputStream.toByteArray();
 
         Intent intent = new Intent(MainActivity.this, OCR.class);
-        intent.putExtra("Image", byteArray);
+        intent.putExtra("image2", bitmap);
+//        intent.putExtra("Image", byteArray);
         startActivity(intent);
 
     }
