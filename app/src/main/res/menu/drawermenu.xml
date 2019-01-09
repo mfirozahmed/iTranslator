@@ -25,6 +25,12 @@
         android:icon="@drawable/faq"
         android:title="FAQ's"
         />
+    <item
+        android:id="@+id/credit"
+        android:icon="@drawable/credit"
+        android:title="Credits"
+        />
+
 
 
 </menu>

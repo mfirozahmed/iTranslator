@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#708090"
+    android:scrollbars="vertical"
     tools:context=".activity_faq">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1.What is ITranslator?"
+        android:text="1.What is ITranslator?\nAns: iTranslator is an android app which reads aloud any typed text written in any document or in any piece of paper."
         android:textStyle="bold"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -17,11 +18,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="2.For whom is this app?\nAns:Anyone can use this app"
+        android:textStyle="bold"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"
-        android:text="Ans: iTranslator is an android app which reads aloud any text written in any document or in any piece of paper"
-        />
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="10dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.Is it a paid app app?\nAns:Yes,It is a paid app"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.How to use this app?\nAns:Please see the tutorial"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="10dp" />
 
 </RelativeLayout>
