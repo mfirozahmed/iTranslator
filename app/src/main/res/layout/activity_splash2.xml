@@ -59,12 +59,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-redium"
-                        android:text="Username"
+                        android:text="Email"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/mailAdress"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -73,7 +74,8 @@
                         android:paddingLeft="15sp"
                         android:paddingRight="15sp"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:inputType="textEmailAddress"/>
 
                     <TextView
                         android:id="@+id/textview3"
@@ -86,6 +88,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/passWord"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -94,7 +97,8 @@
                         android:paddingLeft="15sp"
                         android:paddingRight="15sp"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:inputType="textPassword"/>
                 </LinearLayout>
             </LinearLayout>
 
