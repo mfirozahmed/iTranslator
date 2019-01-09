@@ -25,5 +25,11 @@
         android:icon="@drawable/credit"
         android:title="Credits"
         />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Logout"
+        />
     
 </menu>

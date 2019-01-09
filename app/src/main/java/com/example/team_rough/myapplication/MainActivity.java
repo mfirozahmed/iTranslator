@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
-    private MediaPlayer tutorialmp, profilemp, faqmp, contactmp,creditmp;
+    private MediaPlayer tutorialmp, faqmp, contactmp,creditmp;
     private ImageView imageView;
 
     @Override
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tutorialmp = MediaPlayer.create(this, R.raw.tts_tutorial);
-        profilemp = MediaPlayer.create(this, R.raw.tts_profile);
         faqmp = MediaPlayer.create(this, R.raw.tts_faqs);
         contactmp = MediaPlayer.create(this, R.raw.tts_contact_us);
         creditmp = MediaPlayer.create(this, R.raw.tts_credits);
@@ -135,9 +134,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentt = new Intent(MainActivity.this,activity_tutorial.class);
                 startActivity(intentt);
                 break;
-            case R.id.profile:
-                profilemp.start();
-                break;
             case R.id.faq:
                 faqmp.start();
                 Intent intentf = new Intent(MainActivity.this,activity_faq.class);
@@ -153,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentc = new Intent(MainActivity.this,activity_credit.class);
                 startActivity(intentc);
                 break;
+            case R.id.logout:
+                Intent intentlg = new Intent(MainActivity.this,Splash2.class);
+                startActivity(intentlg);
+                break;
         }
     }
 
@@ -162,10 +162,7 @@ public class MainActivity extends AppCompatActivity {
             tutorialmp.stop();
             tutorialmp.release();
         }
-        if (profilemp.isPlaying()) {
-            profilemp.stop();
-            profilemp.release();
-        }
+      
         if (contactmp.isPlaying()) {
             contactmp.stop();
             contactmp.release();
