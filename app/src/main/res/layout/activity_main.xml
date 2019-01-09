@@ -9,7 +9,7 @@
     android:background="@color/Denim"
     tools:context=".MainActivity">
     
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,7 +22,8 @@
             android:src="@drawable/cameraicon" />
 
 
-    </LinearLayout>
+
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navid"

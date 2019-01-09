@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
     <application
         android:allowBackup="true"
@@ -47,6 +49,15 @@
             android:name=".TTS"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".OCR" />
+        <activity
+            android:name=".activity_contact"
+            android:theme="@style/AppTheme.CustomTheme"></activity>
+        <activity android:name=".activity_faq"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <activity android:name=".activity_tutorial"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
     </application>
 
 </manifest>

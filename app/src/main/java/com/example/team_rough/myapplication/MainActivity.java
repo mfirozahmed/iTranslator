@@ -3,6 +3,7 @@ package com.example.team_rough.myapplication;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 //        intent.putExtra("Image", byteArray);
         startActivity(intent);
 
+
     }
 
     @Override
@@ -122,16 +124,22 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.tutorial:
                 tutorialmp.start();
+                Intent intentt = new Intent(MainActivity.this,activity_tutorial.class);
+                startActivity(intentt);
                 break;
             case R.id.profile:
                 profilemp.start();
                 break;
             case R.id.faq:
                 faqmp.start();
+                Intent intentf = new Intent(MainActivity.this,activity_faq.class);
+                startActivity(intentf);
                 break;
             case R.id.contact:
                 contactmp.start();
-                break;
+               Intent intent1 = new Intent(MainActivity.this,activity_contact.class);
+               startActivity(intent1);
+               break;
         }
     }
 
