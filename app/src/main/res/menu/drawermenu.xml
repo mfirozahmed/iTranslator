@@ -4,11 +4,6 @@
     tools:ignore="MissingDefaultResource">
 
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/profile"
-        android:title="Profile" />
-
-    <item
         android:id="@+id/tutorial"
         android:icon="@drawable/tutorial"
         android:title="Tutorial"
@@ -30,7 +25,5 @@
         android:icon="@drawable/credit"
         android:title="Credits"
         />
-
-
-
+    
 </menu>
