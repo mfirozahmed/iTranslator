@@ -4,39 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#708090"
+    android:background="@drawable/first_layer"
     tools:context=".activity_tutorial">
 
     <VideoView
         android:id="@+id/videoview"
-        android:layout_width="300dp"
-        android:layout_height="200dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="440dp"/>
 
     <Button
         android:id="@+id/playbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/videoview"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/videoview"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="49dp"
-        android:text="Play" />
+        android:layout_marginTop="9dp"
+        android:background="@drawable/play" />
 
     <Button
         android:id="@+id/pausebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/videoview"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:text="Pause" />
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/pause" />
 
 
 

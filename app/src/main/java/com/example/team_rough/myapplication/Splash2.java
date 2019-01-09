@@ -26,7 +26,6 @@ public class Splash2 extends AppCompatActivity {
         public void run() {
             relativeLayout1.setVisibility(View.VISIBLE);
             relativeLayout2.setVisibility(View.VISIBLE);
-
         }
     };
 
@@ -53,6 +52,7 @@ public class Splash2 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Splash2.this, MainActivity.class);
                 startActivity(intent);
+                Splash2.this.finish();
             }
         });
 

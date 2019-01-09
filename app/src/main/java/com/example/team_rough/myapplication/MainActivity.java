@@ -74,7 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        try{
+            super.onActivityResult(requestCode, resultCode, data);
+        }catch (Exception ex){
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+
         Bitmap bitmap = (Bitmap)data.getExtras().get("data");
 
         String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/chobi.jpeg";

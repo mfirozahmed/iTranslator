@@ -4,24 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#708090"
+    android:background="@drawable/first_layer"
     tools:context=".activity_faq">
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1.What is ITranslator?"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp" />
-    <TextView
+        android:id="@+id/faq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"
-        android:text="Ans: iTranslator is an android app which reads aloud any text written in any document or in any piece of paper"
-        />
+        android:layout_marginTop="10dp"
+        android:text="Frquently Ask Questions: "
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:id="@+id/ques1"
+        android:layout_below="@+id/faq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="1. What is iTranslator?"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:fontFamily="cursive" />
+
+    <TextView
+        android:id="@+id/ans1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ques1"
+        android:textSize="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:text="Ans: iTranslator is an android app which reads aloud any text written in any document or in any piece of paper."
+        app:fontFamily="@font/berkshire_swash" />
+
+    <TextView
+        android:id="@+id/ques2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ans1"
+        android:text="2. For whom is this app?"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        app:fontFamily="cursive"/>
+
+    <TextView
+        android:id="@+id/ans2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ques2"
+        android:text="Ans: Anyone can use this app."
+        android:textSize="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        app:fontFamily="@font/berkshire_swash"/>
+
+    <TextView
+        android:id="@+id/ques3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ans2"
+        android:text="3. Is it a paid app?"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        app:fontFamily="cursive"/>
+
+    <TextView
+        android:id="@+id/ans3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ques3"
+        android:text="Ans: Yes,It is a paid app."
+        android:textSize="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        app:fontFamily="@font/berkshire_swash"/>
+
+    <TextView
+        android:id="@+id/ques4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ans3"
+        android:text="4. How to use this app?"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        app:fontFamily="cursive"/>
+
+    <TextView
+        android:id="@+id/ans4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ques4"
+        android:text="Ans: Please see the tutorial."
+        android:textSize="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        app:fontFamily="@font/berkshire_swash"/>
 
 
 </RelativeLayout>

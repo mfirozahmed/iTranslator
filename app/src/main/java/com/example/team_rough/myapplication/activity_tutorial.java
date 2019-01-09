@@ -22,12 +22,12 @@ public class activity_tutorial extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int)(height*.6));
+        getWindow().setLayout((int)(width*.7),(int)(height*.8));
         playbutton = (Button) findViewById(R.id.playbutton);
         pausebutton = (Button) findViewById(R.id.pausebutton);
 
         final VideoView videoview = (VideoView) findViewById(R.id.videoview);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test2);
         videoview.setVideoURI(uri);
         playbutton.setOnClickListener(new View.OnClickListener() {
             @Override
