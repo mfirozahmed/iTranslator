@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean storageResult = StoragePermission.checkPermission(MainActivity.this);
                 boolean cameraResult = CameraPermission.checkPermission(MainActivity.this);
+
                 if(storageResult && cameraResult){
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent,0);

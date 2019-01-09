@@ -41,12 +41,16 @@ public class activity_contact extends Activity {
                 startActivity(Intent.createChooser(mailIntent, "Send mail..."));
             }
         });
+
         numbertext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentcall =new Intent(Intent.ACTION_DIAL);
-                intentcall.setData(Uri.parse("tel:01521429899"));
-                startActivity(intentcall);
+                boolean callResult = CallPermission.checkPermission(activity_contact.this);
+                if(callResult){
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:01521429899"));
+                    startActivity(intent);
+                }
             }
         });
 
