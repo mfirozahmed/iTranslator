@@ -36,18 +36,18 @@ public class Splash2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash2);
 
-        myLayout = (RelativeLayout) findViewById(R.id.myLayout);
+        myLayout = findViewById(R.id.myLayout);
 
         animationDrawable = (AnimationDrawable) myLayout.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(2000);
         animationDrawable.start();
 
-        relativeLayout1 = (RelativeLayout) findViewById(R.id.relativeLayout1);
-        relativeLayout2 = (RelativeLayout) findViewById(R.id.relativeLayout2);
+        relativeLayout1 = findViewById(R.id.relativeLayout1);
+        relativeLayout2 = findViewById(R.id.relativeLayout2);
 
         handler.postDelayed(runnable, 2000);
-        next = (Button) findViewById(R.id.next);
+        next = (Button) findViewById(R.id.forget);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

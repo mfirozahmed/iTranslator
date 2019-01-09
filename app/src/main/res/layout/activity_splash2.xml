@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/my_bg_anim"
-    android:id="@+id/myLayout"
     tools:context=".Splash2">
 
     <RelativeLayout
@@ -29,8 +29,8 @@
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:layout_below="@+id/imageView">
+            android:layout_below="@+id/imageView"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/textview1"
@@ -40,12 +40,13 @@
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="38dp" />
+
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="match_parent"
-                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textview1">
+                android:layout_below="@+id/textview1"
+                android:layout_marginTop="20dp">
 
                 <LinearLayout
                     android:id="@+id/linearLayout2"
@@ -96,51 +97,53 @@
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
+
             <Button
                 android:id="@+id/login"
-                android:layout_below="@+id/linearLayout1"
-                android:layout_height="40dp"
                 android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/linearLayout1"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="50dp"
+                android:background="@drawable/btn_bg"
                 android:text="Login"
-                android:textSize="20dp"
                 android:textColor="@color/white"
-                android:background="@drawable/btn_bg"/>
+                android:textSize="20dp" />
 
 
         </RelativeLayout>
 
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:visibility="gone"
-        android:layout_alignParentBottom="true">
+        android:visibility="gone">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:fontFamily="sans-serif"
             android:text="Signup Now"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/white"
-            android:background="@color/transparent"
-            android:textAllCaps="true"/>
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
         <Button
-            android:id="@+id/next"
+            android:id="@+id/forget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot Password"
-            android:fontFamily="sans-serif"
-            android:background="@color/transparent"
-            android:textColor="@color/white"
             android:layout_alignParentRight="true"
-            android:textAllCaps="true"/>
-
+            android:background="@color/transparent"
+            android:fontFamily="sans-serif"
+            android:text="Forgot Password"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>
