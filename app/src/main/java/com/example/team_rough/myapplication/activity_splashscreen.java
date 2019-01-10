@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class Splashscreen extends Activity {
+public class activity_splashscreen extends Activity {
 
     private Thread splashThread;
 
@@ -51,15 +51,15 @@ public class Splashscreen extends Activity {
                         waited += 100;
                     }
 
-                    Intent intent = new Intent(Splashscreen.this, Splash2.class);
+                    Intent intent = new Intent(activity_splashscreen.this, activity_login.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
-                    Splashscreen.this.finish();
+                    activity_splashscreen.this.finish();
 
                 } catch (InterruptedException e) {
                     // do nothing
                 } finally {
-                    Splashscreen.this.finish();
+                    activity_splashscreen.this.finish();
                 }
 
             }

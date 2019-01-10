@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Splashscreen"
+            android:name=".activity_splashscreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Splash2"
+            android:name=".activity_login"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +34,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,9 +50,9 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".TTS"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".OCR" />
+            android:name=".activity_tts"
+            android:parentActivityName=".activity_main" />
+        <activity android:name=".activity_ocr" />
         <activity
             android:name=".activity_contact"
             android:theme="@style/AppTheme.CustomTheme"></activity>

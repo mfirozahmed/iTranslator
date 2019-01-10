@@ -11,16 +11,13 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
-import java.io.File;
-
-public class OCR extends AppCompatActivity {
+public class activity_ocr extends AppCompatActivity {
 
     private ImageView imageView;
     private StringBuilder stringBuilder;
@@ -65,11 +62,11 @@ public class OCR extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(OCR.this, TTS.class);
+                Intent intent = new Intent(activity_ocr.this, activity_tts.class);
                 String text = stringBuilder.toString();
                 intent.putExtra("Text", text);
                 startActivity(intent);
-                OCR.this.finish();
+                activity_ocr.this.finish();
             }
         });
     }

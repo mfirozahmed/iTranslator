@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/my_bg_anim"
-    tools:context=".Splash2">
+    tools:context=".activity_login">
 
     <RelativeLayout
         android:layout_width="wrap_content"

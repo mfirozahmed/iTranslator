@@ -3,7 +3,6 @@ package com.example.team_rough.myapplication;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -16,15 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import static android.provider.Telephony.Mms.Part.FILENAME;
-
-public class MainActivity extends AppCompatActivity {
+public class activity_main extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
     private NavigationView navView;
@@ -61,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean storageResult = StoragePermission.checkPermission(MainActivity.this);
-                boolean cameraResult = CameraPermission.checkPermission(MainActivity.this);
+                boolean storageResult = StoragePermission.checkPermission(activity_main.this);
+                boolean cameraResult = CameraPermission.checkPermission(activity_main.this);
 
                 if(storageResult && cameraResult){
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -77,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         try{
             super.onActivityResult(requestCode, resultCode, data);
         }catch (Exception ex){
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            Intent intent = new Intent(activity_main.this, activity_main.class);
             startActivity(intent);
         }
 
@@ -110,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 //        bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
 //        byte[] byteArray = byteArrayOutputStream.toByteArray();
 
-        Intent intent = new Intent(MainActivity.this, OCR.class);
+        Intent intent = new Intent(activity_main.this, activity_ocr.class);
         intent.putExtra("image2", bitmap);
 //        intent.putExtra("Image", byteArray);
         startActivity(intent);
@@ -131,28 +127,28 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.tutorial:
                 tutorialmp.start();
-                Intent intentt = new Intent(MainActivity.this,activity_tutorial.class);
+                Intent intentt = new Intent(activity_main.this,activity_tutorial.class);
                 startActivity(intentt);
                 break;
             case R.id.faq:
                 faqmp.start();
-                Intent intentf = new Intent(MainActivity.this,activity_faq.class);
+                Intent intentf = new Intent(activity_main.this,activity_faq.class);
                 startActivity(intentf);
                 break;
             case R.id.contact:
                 contactmp.start();
-               Intent intent1 = new Intent(MainActivity.this,activity_contact.class);
+               Intent intent1 = new Intent(activity_main.this,activity_contact.class);
                startActivity(intent1);
                break;
             case R.id.credit:
                 creditmp.start();
-                Intent intentc = new Intent(MainActivity.this,activity_credit.class);
+                Intent intentc = new Intent(activity_main.this,activity_credit.class);
                 startActivity(intentc);
                 break;
             case R.id.logout:
-                Intent intentlg = new Intent(MainActivity.this,Splash2.class);
+                Intent intentlg = new Intent(activity_main.this,activity_login.class);
                 startActivity(intentlg);
-                MainActivity.this.finish();
+                activity_main.this.finish();
                 break;
         }
     }

@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Splash2 extends AppCompatActivity {
+public class activity_login extends AppCompatActivity {
 
     private EditText loginmail, loginpass;
     private Button signUpbtn;
@@ -64,9 +64,9 @@ public class Splash2 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Splash2.this, MainActivity.class);
+                Intent intent = new Intent(activity_login.this, activity_main.class);
                 startActivity(intent);
-                Splash2.this.finish();
+                activity_login.this.finish();
             }
         });
 
@@ -85,12 +85,12 @@ public class Splash2 extends AppCompatActivity {
         String pass = loginpass.getText().toString();
 
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(Splash2.this,"Please enter your email", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity_login.this,"Please enter your email", Toast.LENGTH_LONG).show();
             return;
         }
 
         else if(TextUtils.isEmpty(pass)){
-            Toast.makeText(Splash2.this,"Please enter your password", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity_login.this,"Please enter your password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -103,7 +103,7 @@ public class Splash2 extends AppCompatActivity {
                                 sendUserToMainActivity();
                             }
                             else{
-                                Toast.makeText(Splash2.this, "Wrong email or password!!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(activity_login.this, "Wrong email or password!!", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -111,9 +111,9 @@ public class Splash2 extends AppCompatActivity {
     }
 
     private void sendUserToMainActivity() {
-        Intent intent = new Intent(Splash2.this,MainActivity.class);
+        Intent intent = new Intent(activity_login.this,activity_main.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-        Splash2.this.finish();
+        activity_login.this.finish();
     }
 }

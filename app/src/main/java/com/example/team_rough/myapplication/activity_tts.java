@@ -19,7 +19,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 
-public class TTS extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class activity_tts extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     private TextToSpeech textToSpeech;
     private Button play;
