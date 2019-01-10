@@ -27,8 +27,11 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="63dp"
         android:text="Play"
+        android:textColor="@color/white"
+        android:background="@drawable/btn1_bg"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/stop"
@@ -38,6 +41,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="205dp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn1_bg"
         android:text="Stop"
         android:textSize="20dp"
         android:textStyle="bold" />

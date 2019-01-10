@@ -28,6 +28,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="OCR"
+        android:textColor="@color/white"
+        android:background="@drawable/btn1_bg"
         />
 
 </RelativeLayout>
