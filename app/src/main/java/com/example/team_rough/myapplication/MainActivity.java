@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout:
                 Intent intentlg = new Intent(MainActivity.this,Splash2.class);
                 startActivity(intentlg);
+                MainActivity.this.finish();
                 break;
         }
     }
