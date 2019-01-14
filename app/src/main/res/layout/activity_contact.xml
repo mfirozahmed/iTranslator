@@ -8,7 +8,7 @@
     tools:context=".activity_contact">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/queryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -23,7 +23,6 @@
         app:fontFamily="cursive" />
 
     <TextView
-        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -35,7 +34,7 @@
         app:fontFamily="casual" />
 
     <TextView
-        android:id="@+id/button"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
@@ -59,7 +58,7 @@
         app:fontFamily="casual" />
 
     <TextView
-        android:id="@+id/button2"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"

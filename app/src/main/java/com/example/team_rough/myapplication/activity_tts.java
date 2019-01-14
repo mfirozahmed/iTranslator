@@ -26,11 +26,11 @@ public class activity_tts extends AppCompatActivity implements TextToSpeech.OnIn
     private Button stop;
     private TextView textView;
 
-    private int mStatus = 0;
     private MediaPlayer mediaPlayer;
+    private ProgressDialog progressDialog;
+    private int mStatus = 0;
     private boolean mProcessed = false;
     private final String FILENAME = "/tts_text.wav";
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
