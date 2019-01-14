@@ -2,7 +2,7 @@
 .idea
 gradle
 
-*.gradle
+settings.gradle
 *.properties
 gradlew
 *.bat
