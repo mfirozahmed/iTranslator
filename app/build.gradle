@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.4'
     implementation 'com.google.firebase:firebase-auth:16.0.4'
     implementation 'com.firebaseui:firebase-ui-database:4.1.0'
+    
     testImplementation 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
