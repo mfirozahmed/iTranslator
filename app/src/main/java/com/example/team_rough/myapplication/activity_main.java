@@ -153,30 +153,30 @@ public class activity_main extends AppCompatActivity {
 
     private void inspect(Uri uri) {
 
-        InputStream is = null;
+        InputStream inputStream = null;
         Bitmap bitmap = null;
 
         try {
 
-            is = getContentResolver().openInputStream(uri);
+            inputStream = getContentResolver().openInputStream(uri);
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
             options.inSampleSize = 2;
             options.inScreenDensity = DisplayMetrics.DENSITY_LOW;
-            bitmap = BitmapFactory.decodeStream(is, null, options);
+            bitmap = BitmapFactory.decodeStream(inputStream, null, options);
             inspectFromBitmap(bitmap);
 
         } catch (FileNotFoundException e) {
-            Log.w(TAG, "Failed to find the file: " + uri, e);
+            Log.d(TAG, "Failed to find the file: " + uri, e);
         } finally {
             if (bitmap != null) {
                 bitmap.recycle();
             }
-            if (is != null) {
+            if (inputStream != null) {
                 try {
-                    is.close();
+                    inputStream.close();
                 } catch (IOException e) {
-                    Log.w(TAG, "Failed to close InputStream", e);
+                    Log.d(TAG, "Failed to close InputStream", e);
                 }
             }
         }
@@ -188,9 +188,7 @@ public class activity_main extends AppCompatActivity {
         TextRecognizer textRecognizer = new TextRecognizer.Builder(this).build();
         try {
             if (!textRecognizer.isOperational()) {
-                new AlertDialog.
-                        Builder(this).
-                        setMessage("Text recognizer could not be set up on your device").show();
+                new AlertDialog.Builder(this).setMessage("Text recognizer could not be set up on your device").show();
                 return;
             }
 
@@ -204,13 +202,13 @@ public class activity_main extends AppCompatActivity {
 
             Collections.sort(textBlocks, new Comparator<TextBlock>() {
                 @Override
-                public int compare(TextBlock o1, TextBlock o2) {
-                    int diffOfTops = o1.getBoundingBox().top - o2.getBoundingBox().top;
-                    int diffOfLefts = o1.getBoundingBox().left - o2.getBoundingBox().left;
-                    if (diffOfTops != 0) {
-                        return diffOfTops;
+                public int compare(TextBlock textBlock1, TextBlock textBlock2) {
+                    int differentOfTops = textBlock1.getBoundingBox().top - textBlock2.getBoundingBox().top;
+                    int differentOfLefts = textBlock1.getBoundingBox().left - textBlock2.getBoundingBox().left;
+                    if (differentOfTops != 0) {
+                        return differentOfTops;
                     }
-                    return diffOfLefts;
+                    return differentOfLefts;
                 }
             });
 
